@@ -21,7 +21,7 @@ final class MyJSON implements JSON {
   @Override
   public JSON getObject(String name) {
     // TODO: implement this
-    return null;
+    return {"name" + : + "\"" + name  + "\""};
   }
 
   @Override
