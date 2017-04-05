@@ -27,13 +27,15 @@ final class MyJSON implements JSON {
   @Override
   public JSON setObject(String name, JSON value) {
     // TODO: implement this
-    return this;
+    return {"name :" + "\"" + name + "\""
+           "\n" + value
+           } ;
   }
 
   @Override
   public String getString(String name) {
     // TODO: implement this
-    return null;
+    return name;
   }
 
   @Override
