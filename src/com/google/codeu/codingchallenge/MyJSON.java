@@ -27,9 +27,12 @@ final class MyJSON implements JSON {
   @Override
   public JSON setObject(String name, JSON value) {
     // TODO: implement this
+   return value = name;
+    /* 
     return {"name :" + "\"" + name + "\""
            "\n" + value
            } ;
+   */
   }
 
   @Override
@@ -41,7 +44,7 @@ final class MyJSON implements JSON {
   @Override
   public JSON setString(String name, String value) {
     // TODO: implement this
-    return this;
+    return name = value;
   }
 
   @Override
