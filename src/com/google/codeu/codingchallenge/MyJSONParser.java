@@ -21,6 +21,25 @@ final class MyJSONParser implements JSONParser {
   @Override
   public JSON parse(String in) throws IOException {
     // TODO: implement this
-    return new MyJSON();
+    MyJSON json = new MyJSON();
+    String key = " ";
+    String value = " ";
+    if(in.startsWith("{"))
+    {
+      MyJSON temp = new MyJSON();
+    	if(in.contains(":"))
+    	{
+    		key = in.substring(in.indexOf("\""), in.indexOf(":"));
+    		value = in.substring(in.indexOf(":"));
+    		
+    		json.setObject(key, temp);
+    		json.setString(key, value);
+    	}	
+    }
+    else
+    {	
+    	throw new IOException(in);
+    }	
+    return json;
   }
 }
