@@ -17,43 +17,52 @@ package com.google.codeu.codingchallenge;
 import java.util.Collection;
 
 final class MyJSON implements JSON {
-
+MyJSON temp = new MyJSON();
   @Override
   public JSON getObject(String name) {
     // TODO: implement this
-    return {"name" + : + "\"" + name  + "\""};
+	  temp = "{" + "\"" + name  + "\"" + "}"; 
+    return temp;
   }
 
   @Override
   public JSON setObject(String name, JSON value) {
     // TODO: implement this
-   return value = name;
-    /* 
-    return {"name :" + "\"" + name + "\""
-           "\n" + value
-           } ;
-   */
+    return this.value = { + name + };
   }
 
   @Override
   public String getString(String name) {
     // TODO: implement this
-    return name;
+    return "\"" + name + "\"";
   }
 
   @Override
   public JSON setString(String name, String value) {
     // TODO: implement this
-    return name = value;
+    return this.name = value;
   }
 
   @Override
   public void getObjects(Collection<String> names) {
     // TODO: implement this
+    String objects = "";
+    for(int i = 0; i < names.size(); i++)
+    {
+    	//objects = "\"" + getObject(names) + "\"" + " ,";
+    	names.add(getObjects());
+    }
+    //objects.removeCharAt(objects.lastIndexOf(","));
   }
 
   @Override
   public void getStrings(Collection<String> names) {
     // TODO: implement this
+    String str = "";
+ 	for(int i = 0; i < names.size(); i++)
+    {
+    	str = str + getString(names[i]) + ",";
+    }
+    str = str.substring(0,str.lastIndexOf(","));
   }
 }
